@@ -10,6 +10,14 @@ The system provides RESTful APIs for managing parking spots, checking availabili
 
 The solution follows a layered architecture based on Clean Architecture principles.
 
+flowchart TD
+    UI["ParkingSystem.UI<br/>Angular SPA"]
+    API["ParkingSystem.Core<br/>ASP.NET Core Web API"]
+    DB[("SQL Server")]
+
+    UI -->|"REST API / HTTP"| API
+    API -->|"EF Core"| DB
+
 | Layer | Technology | Responsibility |
 |---|---|---|
 | Backend | ASP.NET Core Web API | REST API endpoints and business logic |
